@@ -11,7 +11,7 @@ use Mix.Config
 # before starting your production server.
 config :hw06, Hw06Web.Endpoint,
   http: [:inet6, port: System.get_env("PORT") || 4000],
-  url: [host: "hw06@qiangzhe.me", port: 80],
+  url: [host: "hw06.qiangzhe.me", port: 80],
   cache_static_manifest: "priv/static/cache_manifest.json",
   server: true,
   version: Application.spec(:phoenix_distillery, :vsn),

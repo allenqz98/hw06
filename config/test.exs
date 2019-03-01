@@ -12,7 +12,7 @@ config :logger, level: :warn
 # Configure your database
 config :hw06, Hw06.Repo,
   username: "hw06",
-  password: "Aef2unaa7Iu7",
+  password: "eiy2thaiMae5",
   database: "hw06_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

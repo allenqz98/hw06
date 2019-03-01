@@ -6,7 +6,8 @@ defmodule Hw06.Repo.Migrations.CreateTasks do
       add :title, :string
       add :decription, :string
       add :completed, :boolean, default: false, null: false
-
+      add :time, :integer
+      add :user, reference(:users, on_delete :delete_all)
       timestamps()
     end
 

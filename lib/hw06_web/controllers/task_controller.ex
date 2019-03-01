@@ -3,6 +3,7 @@ defmodule Hw06Web.TaskController do
 
   alias Hw06.Tasks
   alias Hw06.Tasks.Task
+  alias Hw06.Users
 
   def index(conn, _params) do
     tasks = Tasks.list_tasks()
@@ -11,7 +12,7 @@ defmodule Hw06Web.TaskController do
 
   def new(conn, _params) do
     changeset = Tasks.change_task(%Task{})
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "new.html", changeset: changeset, users: Users.list_users)
   end
 
   def create(conn, %{"task" => task_params}) do
@@ -22,7 +23,7 @@ defmodule Hw06Web.TaskController do
         |> redirect(to: Routes.task_path(conn, :show, task))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        render(conn, "new.html", changeset: changeset, users: Users.list_users)
     end
   end
 
@@ -34,7 +35,7 @@ defmodule Hw06Web.TaskController do
   def edit(conn, %{"id" => id}) do
     task = Tasks.get_task!(id)
     changeset = Tasks.change_task(task)
-    render(conn, "edit.html", task: task, changeset: changeset)
+    render(conn, "edit.html", task: task, changeset: changeset, users: Users.list_users)
   end
 
   def update(conn, %{"id" => id, "task" => task_params}) do
@@ -47,7 +48,7 @@ defmodule Hw06Web.TaskController do
         |> redirect(to: Routes.task_path(conn, :show, task))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "edit.html", task: task, changeset: changeset)
+        render(conn, "edit.html", task: task, changeset: changeset, users: Users.list_users)
     end
   end
 

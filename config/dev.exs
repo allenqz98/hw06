@@ -69,7 +69,7 @@ config :phoenix, :plug_init_mode, :runtime
 # Configure your database
 config :hw06, Hw06.Repo,
   username: "hw06",
-  password: "Aef2unaa7Iu7",
+  password: "eiy2thaiMae5",
   database: "hw06_dev",
   hostname: "localhost",
   pool_size: 10

@@ -17,6 +17,16 @@
     <%= @task.completed %>
   </li>
 
+  <li>
+    <strong>Time:</strong>
+    <%= @task.time %>
+  </li>
+
+  <li>
+    <strong>User:</strong>
+    <%= @task.user %>
+  </li>
+
 </ul>
 
 <span><%= link "Edit", to: Routes.task_path(@conn, :edit, @task) %></span>

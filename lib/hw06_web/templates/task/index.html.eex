@@ -19,7 +19,7 @@
       <td><%= task.decription %></td>
       <td><%= task.completed %></td>
       <td><%= task.time %></td>
-      <td><%= task.user.name %></td>
+      <td><%= task.user && task.user.name  %></td>
 
       <td>
         <%= link "Show", to: Routes.task_path(@conn, :show, task), class: "btn btn-secondary" %>

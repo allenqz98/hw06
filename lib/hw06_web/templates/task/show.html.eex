@@ -24,7 +24,7 @@
 
   <li>
     <strong>User:</strong>
-    <%= @task.user %>
+    <%= @task.user && @task.user.name %>
   </li>
 
 </ul>

@@ -20,7 +20,7 @@ defmodule Hw06Web.Router do
     get "/", PageController, :index
     resources "/tasks", TaskController
     resources "/users", UserController
-    resources "/sessions", SessionController, only: [:create, :delete], singleton: true
+    resources "/sessions", SessionController, only: [:delete, :create], singleton: true
   end
 
   # Other scopes may use custom stacks.
